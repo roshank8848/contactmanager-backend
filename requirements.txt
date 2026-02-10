@@ -1,0 +1,11 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+alembic
+pydantic
+pydantic-settings
+asyncpg
+python-dotenv
+greenlet
+email-validator
+greenlet
