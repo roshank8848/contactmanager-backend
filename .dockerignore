@@ -10,7 +10,5 @@ venv/
 .venv
 .git
 .gitignore
-alembic.ini
-alembic/versions/
 pytest.ini
 tests/
