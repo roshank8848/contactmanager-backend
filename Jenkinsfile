@@ -5,7 +5,7 @@ pipeline{
         // Define your Docker registry and image name
         IMAGE_REPO = 'prengineering'
         IMAGE_NAME      = 'backend'
-        IMAGE_TAG       = "${env.BUILD_NUMBER}" // Uses Jenkins build number as tag
+        IMAGE_TAG       = "0.0.${env.BUILD_NUMBER}" // Uses Jenkins build number as tag
         // Python specific environment variables
         PIP_CACHE_DIR   = "${WORKSPACE}/.pip-cache"
     }
@@ -63,8 +63,9 @@ pipeline{
         stage('Docker build'){
             steps {
                 echo 'building docker image'
-                sh "docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} ."
+                sh "docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_REPO}/${IMAGE_NAME}:latest  ."
                 sh "docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}"
+                sh "docker push ${IMAGE_REPO}/${IMAGE_NAME}:latest:
             }
         }
 
