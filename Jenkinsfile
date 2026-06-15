@@ -65,7 +65,7 @@ pipeline{
                 echo 'building docker image'
                 sh "docker build -t ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG} -t ${IMAGE_REPO}/${IMAGE_NAME}:latest  ."
                 sh "docker push ${IMAGE_REPO}/${IMAGE_NAME}:${IMAGE_TAG}"
-                sh "docker push ${IMAGE_REPO}/${IMAGE_NAME}:latest:
+                sh "docker push ${IMAGE_REPO}/${IMAGE_NAME}:latest"
             }
         }
 
